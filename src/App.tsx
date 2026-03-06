@@ -278,6 +278,15 @@ function App() {
             <span className="invitation-names-highlight">Василь та Мирослова</span>
             <p>Ваша присутність зробить цей день ще більш особливим та незабутнім для нас.</p>
           </div>
+          
+          {/* Calendar */}
+          <div className="invitation-calendar">
+            <div className="calendar-card">
+              <div className="calendar-month">ЛИСТОПАД</div>
+              <div className="calendar-day">10</div>
+              <div className="calendar-year">2026</div>
+            </div>
+          </div>
         </section>
 
         {/* Countdown */}

@@ -537,6 +537,48 @@ body.locked {
   font-style: normal;
 }
 
+/* ===== CALENDAR ===== */
+.invitation-calendar {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-card {
+  background: linear-gradient(135deg, #3d3225 0%, #2c2419 100%);
+  border: 1px solid rgba(201, 169, 110, 0.3);
+  border-radius: 8px;
+  padding: 20px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.calendar-month {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  color: rgba(201, 169, 110, 0.8);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.calendar-day {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: #c9a96e;
+  line-height: 1;
+}
+
+.calendar-year {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(232, 221, 208, 0.7);
+  margin-top: 5px;
+}
+
 /* ===== COUNTDOWN ===== */
 .countdown-section {
   background: linear-gradient(to bottom, #fdfbf8, #f8f3ed);
