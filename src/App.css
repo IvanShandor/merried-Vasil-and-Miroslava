@@ -544,39 +544,88 @@ body.locked {
   justify-content: center;
 }
 
-.calendar-card {
-  background: linear-gradient(135deg, #3d3225 0%, #2c2419 100%);
+.calendar-wrapper {
+  background: #fff;
   border: 1px solid rgba(201, 169, 110, 0.3);
-  border-radius: 8px;
-  padding: 20px 35px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  min-width: 320px;
 }
 
-.calendar-month {
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+.calendar-month-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #3d3225;
+  letter-spacing: 2px;
+}
+
+.calendar-nav {
+  color: #c9a96e;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.calendar-nav:hover {
+  opacity: 1;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.calendar-weekdays span {
+  text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 4px;
-  color: rgba(201, 169, 110, 0.8);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #a09585;
   text-transform: uppercase;
-  margin-bottom: 5px;
+  letter-spacing: 1px;
+  padding: 8px 0;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
 }
 
 .calendar-day {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3.5rem;
-  font-weight: 300;
-  color: #c9a96e;
-  line-height: 1;
-}
-
-.calendar-year {
+  text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
-  color: rgba(232, 221, 208, 0.7);
-  margin-top: 5px;
+  color: #5a5047;
+  padding: 10px 0;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.calendar-day.wedding-day {
+  background: linear-gradient(135deg, #c9a96e 0%, #b5955a 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(201, 169, 110, 0.4);
+}
+
+.calendar-day:hover:not(.wedding-day) {
+  background: rgba(201, 169, 110, 0.1);
 }
 
 /* ===== COUNTDOWN ===== */

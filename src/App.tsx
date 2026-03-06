@@ -281,10 +281,31 @@ function App() {
           
           {/* Calendar */}
           <div className="invitation-calendar">
-            <div className="calendar-card">
-              <div className="calendar-month">ЛИСТОПАД</div>
-              <div className="calendar-day">10</div>
-              <div className="calendar-year">2026</div>
+            <div className="calendar-wrapper">
+              <div className="calendar-header">
+                <span className="calendar-nav">&lt;</span>
+                <span className="calendar-month-year">ЛИСТОПАД 2026</span>
+                <span className="calendar-nav">&gt;</span>
+              </div>
+              <div className="calendar-weekdays">
+                <span>Пн</span>
+                <span>Вт</span>
+                <span>Ср</span>
+                <span>Чт</span>
+                <span>Пт</span>
+                <span>Сб</span>
+                <span>Нд</span>
+              </div>
+              <div className="calendar-days">
+                {[...Array(30)].map((_, i) => (
+                  <span 
+                    key={i} 
+                    className={`calendar-day ${i + 1 === 10 ? 'wedding-day' : ''}`}
+                  >
+                    {i + 1}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </section>
