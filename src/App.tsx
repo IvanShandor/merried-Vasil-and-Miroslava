@@ -256,7 +256,7 @@ function App() {
                 }}
                 loop={isRepeat}
               >
-                <source src="/music/Perfect-Ed_Sheeran.mp3" type="audio/mpeg" />
+                <source src="music/Perfect-Ed_Sheeran.mp3" type="audio/mpeg" />
                 Ваш браузер не підтримує аудіо елемент.
               </audio>
             </div>
@@ -298,9 +298,8 @@ function App() {
           <div className="section-subtitle">Розклад</div>
           <div className="timeline">
             {[
-              { time: '17:00', event: 'Фуршет', desc: 'Ласкаво просимо до Restaurace u Tatyany', icon: '🥂' },
-              { time: '18:00', event: 'Банкет та Вечірка', desc: 'Святкування, танці, веселощі', icon: '🎉' },
-              { time: '21:00', event: 'Весільний торт', desc: 'Солодкий момент разом', icon: '🎂' },
+              { time: '14:30', event: 'Фотосесія', desc: 'Чарівні моменти разом', icon: '📸' },
+              { time: '17:00', event: 'Банкет', desc: 'Святкування, танці, веселощі', icon: '🎉' },
             ].map((item, idx) => (
               <div key={idx} className={`timeline-item ${idx % 2 === 0 ? 'odd' : 'even'}`}>
                 <div className="timeline-content">
@@ -326,7 +325,7 @@ function App() {
               <h3>Restaurace u Tatyany</h3>
               <div className="venue-type">Банкет та вечірка</div>
               <p className="venue-address">Zvonařka 411<br />602 00 Brno-střed-Trnitá, Чехія</p>
-              <p>Фуршет о 17:00<br />Банкет о 18:00</p>
+              <p>Банкет о 17:00</p>
               <a href="https://maps.google.com/?q=Zvonařka+411,+602+00+Brno-střed-Trnitá,+Чехія" target="_blank" className="map-btn">Показати на карті</a>
             </div>
           </div>
