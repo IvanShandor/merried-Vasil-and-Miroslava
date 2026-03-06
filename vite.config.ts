@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "./",
+  base: "/merried-Vasil-and-Miroslava/",
   plugins: [react(), tailwindcss(), viteSingleFile()],
   resolve: {
     alias: {
