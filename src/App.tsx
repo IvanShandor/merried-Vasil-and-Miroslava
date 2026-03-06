@@ -38,24 +38,28 @@ function App() {
     setIsUnlocking(true);
     setTimeout(() => {
       setIsLocked(false);
-      // Auto-play music after unlock
-      if (audioRef.current) {
-        audioRef.current.play().then(() => {
-          setIsPlaying(true);
-        }).catch(err => console.log('Autoplay blocked:', err));
-      }
+      // Auto-play music after unlock - removed autoplay due to browser restrictions
+      // Music will start when user clicks play button
     }, 1400);
   };
 
   const togglePlay = () => {
-    if (!audioRef.current) return;
+    if (!audioRef.current) {
+      console.log('Audio ref is null');
+      return;
+    }
     
     if (isPlaying) {
       audioRef.current.pause();
+      setIsPlaying(false);
     } else {
-      audioRef.current.play();
+      audioRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch(err => {
+        console.log('Play failed:', err);
+        setIsPlaying(false);
+      });
     }
-    setIsPlaying(!isPlaying);
   };
 
   const handleTimeUpdate = () => {
@@ -67,7 +71,16 @@ function App() {
   const handleLoadedMetadata = () => {
     if (audioRef.current) {
       setDuration(audioRef.current.duration);
+      console.log('Audio loaded, duration:', audioRef.current.duration);
     }
+  };
+
+  const handleCanPlay = () => {
+    console.log('Audio can play');
+  };
+
+  const handleAudioError = (e: React.SyntheticEvent<HTMLAudioElement>) => {
+    console.error('Audio error:', e);
   };
 
   const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -229,8 +242,11 @@ function App() {
               </div>
               <audio 
                 ref={audioRef}
+                preload="auto"
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleLoadedMetadata}
+                onCanPlay={handleCanPlay}
+                onError={handleAudioError}
                 onEnded={() => {
                   if (isRepeat) {
                     audioRef.current?.play();
@@ -240,7 +256,8 @@ function App() {
                 }}
                 loop={isRepeat}
               >
-                <source src="/music/Perfect - Ed Sheeran.mp3" type="audio/mpeg" />
+                <source src="/music/Perfect-Ed_Sheeran.mp3" type="audio/mpeg" />
+                Ваш браузер не підтримує аудіо елемент.
               </audio>
             </div>
           </div>
@@ -281,9 +298,7 @@ function App() {
           <div className="section-subtitle">Розклад</div>
           <div className="timeline">
             {[
-              { time: '14:00', event: 'Церемонія', desc: 'Церква Святого Миколая', icon: '💍' },
-              { time: '15:30', event: 'Фотосесія', desc: 'Прогулянка та зйомка', icon: '📸' },
-              { time: '17:00', event: 'Фуршет', desc: 'Ласкаво просимо до ресторану', icon: '🥂' },
+              { time: '17:00', event: 'Фуршет', desc: 'Ласкаво просимо до Restaurace u Tatyany', icon: '🥂' },
               { time: '18:00', event: 'Банкет та Вечірка', desc: 'Святкування, танці, веселощі', icon: '🎉' },
               { time: '21:00', event: 'Весільний торт', desc: 'Солодкий момент разом', icon: '🎂' },
             ].map((item, idx) => (
@@ -303,24 +318,16 @@ function App() {
 
         {/* Venue */}
         <section className="section venue" id="venue">
-          <h2 className="section-title">Локації</h2>
+          <h2 className="section-title">Локація</h2>
           <div className="section-subtitle">Де нас знайти</div>
           <div className="venue-cards">
             <div className="venue-card">
-              <div className="venue-icon">⛪</div>
-              <h3>Храм Святого Миколая</h3>
-              <div className="venue-type">Церемонія вінчання</div>
-              <p className="venue-address">вул. Соборна, 15<br />м. Львів</p>
-              <p>Початок о 14:00<br />Просимо не запізнюватись</p>
-              <a href="#" className="map-btn">Показати на карті</a>
-            </div>
-            <div className="venue-card">
               <div className="venue-icon">🏛️</div>
-              <h3>Ресторан "Золотий Лев"</h3>
+              <h3>Restaurace u Tatyany</h3>
               <div className="venue-type">Банкет та вечірка</div>
-              <p className="venue-address">вул. Шевченка, 42<br />м. Львів</p>
+              <p className="venue-address">Zvonařka 411<br />602 00 Brno-střed-Trnitá, Чехія</p>
               <p>Фуршет о 17:00<br />Банкет о 18:00</p>
-              <a href="#" className="map-btn">Показати на карті</a>
+              <a href="https://maps.google.com/?q=Zvonařka+411,+602+00+Brno-střed-Trnitá,+Чехія" target="_blank" className="map-btn">Показати на карті</a>
             </div>
           </div>
         </section>
@@ -328,16 +335,10 @@ function App() {
         {/* Dress Code */}
         <section className="section dresscode" id="dresscode">
           <h2 className="section-title">Дрес-код</h2>
-          <div className="section-subtitle">Палітра вечора</div>
+          <div className="section-subtitle">Вільний стиль</div>
           <div className="dresscode-text">
-            Ми будемо вдячні, якщо ваш наряд буде відповідати кольоровій палітрі нашого свята. Це додасть гармонії та створить неймовірну атмосферу.
-          </div>
-          <div className="color-palette">
-            {['#3d3225', '#c9a96e', '#8B7355', '#D4C5B5', '#5B7B6F', '#8B4F65', '#F5F0EB'].map((color, idx) => (
-              <div key={idx} className="color-swatch" style={{ background: color }}>
-                <span className="swatch-name">Колір {idx + 1}</span>
-              </div>
-            ))}
+            Ми не встановлюємо суворих рамок для дрес-коду. Для нас головне — ваша присутність та гарний настрій!<br />
+            Будь ласка, обирайте вбрання, у якому ви почуватиметеся максимально комфортно та впевнено, незалежно від кольору чи стилю.
           </div>
         </section>
 
