@@ -389,7 +389,7 @@ body.locked {
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(245, 235, 224, 0.85) 0%, rgba(240, 230, 216, 0.85) 50%, rgba(232, 221, 208, 0.85) 100%), url('../../images/IMG_0120.JPG') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(245, 235, 224, 0.85) 0%, rgba(240, 230, 216, 0.85) 50%, rgba(232, 221, 208, 0.85) 100%), url('/images/IMG_0120.JPG') center/cover no-repeat;
   background-blend-mode: overlay;
 }
 
