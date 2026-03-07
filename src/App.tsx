@@ -369,6 +369,11 @@ function App() {
           </div>
         </section>
 
+        {/* Photo Section */}
+        <section className="section photo-section">
+          <img src="/images/IMG_0132.JPG" alt="Wedding moment" className="photo-section-img" />
+        </section>
+
         {/* Venue */}
         <section className="section venue" id="venue">
           <h2 className="section-title">Локація</h2>

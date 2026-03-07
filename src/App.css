@@ -807,6 +807,19 @@ body.locked {
 
 .timeline-icon { font-size: 1.5rem; margin-bottom: 8px; }
 
+/* ===== PHOTO SECTION ===== */
+.photo-section {
+  padding: 0;
+  background: #fff;
+}
+
+.photo-section-img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
 /* ===== VENUE ===== */
 .venue { background: linear-gradient(to bottom, #f8f3ed, #fdfbf8); }
 
