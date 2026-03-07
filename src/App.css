@@ -810,27 +810,22 @@ body.locked {
 /* ===== PHOTO SECTION ===== */
 .photo-section {
   padding: 0;
-  margin: 0;
-  background: #f8f3ed;
+  background: #fff;
 }
 
 .photo-section-bg {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  height: 700px;
-  background-image: linear-gradient(to bottom, rgba(248,243,237,0.9) 0%, rgba(253,251,248,0.9) 100%), url('/images/IMG_0132.JPG');
-  background-size: 100% auto;
+  width: 100%;
+  height: 500px;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(248,243,237,0.5) 50%, rgba(248,243,237,0.95) 100%), url('/images/IMG_0132.JPG');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 @media (max-width: 768px) {
   .photo-section-bg {
-    height: 400px;
+    height: 300px;
+    background-size: cover;
   }
 }
 
