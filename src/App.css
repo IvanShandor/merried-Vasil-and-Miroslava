@@ -665,16 +665,16 @@ body.locked {
 
 @keyframes ringSwing {
   0% {
-    transform: rotate(0deg) translateX(0);
+    transform: rotate(0deg);
   }
   25% {
-    transform: rotate(8deg) translateX(3px);
+    transform: rotate(4deg);
   }
   75% {
-    transform: rotate(-8deg) translateX(-3px);
+    transform: rotate(-4deg);
   }
   100% {
-    transform: rotate(0deg) translateX(0);
+    transform: rotate(0deg);
   }
 }
 
