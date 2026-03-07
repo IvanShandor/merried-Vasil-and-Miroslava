@@ -617,11 +617,43 @@ body.locked {
 }
 
 .calendar-day.wedding-day {
-  background: linear-gradient(135deg, #c9a96e 0%, #b5955a 100%);
-  color: #fff;
-  font-weight: 600;
-  font-size: 1rem;
-  box-shadow: 0 4px 12px rgba(201, 169, 110, 0.4);
+  background: transparent;
+  color: #3d3225;
+  font-weight: 700;
+  font-size: 1.1rem;
+  position: relative;
+}
+
+.calendar-day.wedding-day::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #e8ddd0 0%, #c9a96e 25%, #f5e6d3 50%, #d4af37 75%, #e8ddd0 100%);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 0 3px #c9a96e,
+    0 0 0 6px #3d3225,
+    0 0 15px rgba(201, 169, 110, 0.5),
+    inset 0 0 10px rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+
+.calendar-day.wedding-day::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(135deg, #fff 0%, #c9a96e 50%, #8b7355 100%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+  z-index: 2;
 }
 
 .calendar-day:hover:not(.wedding-day) {
