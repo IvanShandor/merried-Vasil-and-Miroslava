@@ -813,12 +813,12 @@ body.locked {
   background: #fff;
 }
 
-.photo-section-img {
+.photo-section-bg {
   width: 100%;
   height: 400px;
-  object-fit: cover;
-  display: block;
-  border: 2px solid red;
+  background-image: url('/images/IMG_0132.JPG');
+  background-size: cover;
+  background-position: center;
 }
 
 /* ===== VENUE ===== */

@@ -371,7 +371,7 @@ function App() {
 
         {/* Photo Section */}
         <section className="section photo-section">
-          <img src="/images/IMG_0132.JPG" alt="Wedding moment" className="photo-section-img" />
+          <div className="photo-section-bg"></div>
         </section>
 
         {/* Venue */}
