@@ -658,16 +658,23 @@ body.locked {
   z-index: 2;
   margin-top: -20px;
   margin-bottom: 28px;
-  animation: ringSwing 3s ease-in-out infinite;
+  margin-left: 5px;
+  animation: ringSwing 2.5s ease-in-out infinite;
   transform-origin: center bottom;
 }
 
 @keyframes ringSwing {
-  0%, 100% {
-    transform: rotate(-3deg) translateY(-2px);
+  0% {
+    transform: rotate(0deg) translateX(0);
   }
-  50% {
-    transform: rotate(3deg) translateY(0);
+  25% {
+    transform: rotate(8deg) translateX(3px);
+  }
+  75% {
+    transform: rotate(-8deg) translateX(-3px);
+  }
+  100% {
+    transform: rotate(0deg) translateX(0);
   }
 }
 
