@@ -651,11 +651,12 @@ body.locked {
 }
 
 .diamond-svg {
-  width: 28px;
-  height: 18px;
+  width: 36px;
+  height: 24px;
   filter: drop-shadow(0 2px 4px rgba(201, 169, 110, 0.5));
   position: relative;
   z-index: 2;
+  margin-top: -20px;
   margin-bottom: 28px;
   animation: ringSwing 3s ease-in-out infinite;
   transform-origin: center bottom;
