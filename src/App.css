@@ -810,6 +810,7 @@ body.locked {
 /* ===== PHOTO SECTION ===== */
 .photo-section {
   padding: 0;
+  margin: 0;
   background: #fff;
 }
 
@@ -820,14 +821,18 @@ body.locked {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
   .photo-section-bg {
-    height: 500px;
+    height: 600px;
     background-size: cover;
-    margin-bottom: 0;
+    margin: 0;
+  }
+  .photo-section {
+    padding: 0;
+    margin: 0;
   }
 }
 
