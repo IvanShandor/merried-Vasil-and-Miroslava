@@ -370,7 +370,7 @@ function App() {
         </section>
 
         {/* Photo Section */}
-        <section className="section photo-section">
+        <section className="photo-section">
           <div className="photo-section-bg"></div>
         </section>
 
