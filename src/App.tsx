@@ -302,7 +302,31 @@ function App() {
                     key={i} 
                     className={`calendar-day ${i + 1 === 10 ? 'wedding-day' : ''}`}
                   >
-                    {i + 1}
+                    {i + 1 === 10 ? (
+                      <div className="diamond-wrapper">
+                        <svg className="diamond-svg" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 1 L19 6 L15 15 L9 15 L5 6 Z" fill="url(#diamondGradient)" />
+                          <path d="M12 1 L15 6 L9 6 Z" fill="url(#diamondTop)" />
+                          <path d="M5 6 L19 6" stroke="#c9a96e" strokeWidth="0.5" />
+                          <path d="M9 6 L9 15" stroke="#c9a96e" strokeWidth="0.5" />
+                          <path d="M15 6 L15 15" stroke="#c9a96e" strokeWidth="0.5" />
+                          <defs>
+                            <linearGradient id="diamondGradient" x1="12%" y1="0%" x2="88%" y2="100%">
+                              <stop offset="0%" stopColor="#f5f5f5" />
+                              <stop offset="50%" stopColor="#c9a96e" />
+                              <stop offset="100%" stopColor="#8b7355" />
+                            </linearGradient>
+                            <linearGradient id="diamondTop" x1="12%" y1="0%" x2="88%" y2="100%">
+                              <stop offset="0%" stopColor="#ffffff" />
+                              <stop offset="100%" stopColor="#e8ddd0" />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                        <span className="wedding-day-number">10</span>
+                      </div>
+                    ) : (
+                      i + 1
+                    )}
                   </span>
                 ))}
               </div>
