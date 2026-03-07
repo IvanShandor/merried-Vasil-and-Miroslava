@@ -939,9 +939,18 @@ body.locked {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: #3d3225;
+  background: linear-gradient(to bottom, rgba(61, 50, 37, 0.85), rgba(44, 36, 25, 0.95)), url('/images/IMG_0119.JPG') center/cover no-repeat;
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
+}
+
+.footer-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: rgba(232, 221, 208, 0.9);
+  font-style: italic;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
 }
 
 .footer-names {

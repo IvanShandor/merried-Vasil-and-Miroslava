@@ -397,6 +397,7 @@ function App() {
 
         {/* Footer */}
         <footer className="footer">
+          <div className="footer-text">Будемо дуже раді бачити вас на нашому святі</div>
           <div className="footer-names">Василь & Мирослова</div>
           <div className="footer-date">10 листопада 2026</div>
           <div className="footer-hearts">♥ ♥ ♥</div>
