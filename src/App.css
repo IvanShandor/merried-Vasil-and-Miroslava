@@ -815,10 +815,11 @@ body.locked {
 
 .photo-section-bg {
   width: 100%;
-  height: 400px;
-  background-image: url('/images/IMG_0132.JPG');
-  background-size: cover;
+  height: 500px;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(248,243,237,0.3) 50%, rgba(248,243,237,0.8) 100%), url('/images/IMG_0132.JPG');
+  background-size: 100% auto;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* ===== VENUE ===== */
