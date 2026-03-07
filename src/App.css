@@ -644,9 +644,7 @@ body.locked {
   height: 38px;
   border: 2px solid #c9a96e;
   border-radius: 50%;
-  box-shadow: 
-    0 0 0 2px #3d3225,
-    0 0 8px rgba(201, 169, 110, 0.3);
+  box-shadow: 0 0 8px rgba(201, 169, 110, 0.3);
   z-index: 0;
 }
 
