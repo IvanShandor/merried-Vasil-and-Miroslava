@@ -656,7 +656,18 @@ body.locked {
   filter: drop-shadow(0 2px 4px rgba(201, 169, 110, 0.5));
   position: relative;
   z-index: 2;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  animation: ringSwing 3s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes ringSwing {
+  0%, 100% {
+    transform: rotate(-5deg) translateY(0);
+  }
+  50% {
+    transform: rotate(5deg) translateY(-3px);
+  }
 }
 
 .wedding-day-number {
