@@ -825,7 +825,7 @@ body.locked {
 
 @media (max-width: 768px) {
   .photo-section-bg {
-    height: 450px;
+    height: 500px;
     background-size: cover;
     margin-bottom: 0;
   }
