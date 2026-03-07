@@ -1160,7 +1160,6 @@ body.locked {
   .hero-names { font-size: 3.5rem; }
   .hero-names .amp { font-size: 2rem; }
   .section-title { font-size: 2.2rem; }
-  .section { padding: 70px 15px; }
   .countdown-wrapper { gap: 20px; }
   .countdown-circle { width: 90px; height: 90px; }
   .countdown-number { font-size: 2.2rem; }
